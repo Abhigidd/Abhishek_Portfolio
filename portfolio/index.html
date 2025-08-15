@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Gidd - Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900">
+
+    <!-- Three.js Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="fixed inset-0 z-20 flex flex-col justify-center items-center text-center transition-opacity duration-500">
+        <h1 class="landing-title text-6xl md:text-8xl font-bold mb-4">Galaxy Abhishek</h1>
+        <p class="typewriter text-2xl md:text-3xl text-gray-300 mb-8">Welcome to my corner of the universe.</p>
+        <button id="enter-galaxy-button" class="text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 transform hover:scale-110">
+            <i class="fas fa-rocket mr-2"></i>Launch Portfolio
+        </button>
+    </div>
+
+    <!-- Main Content Container -->
+    <div id="main-content" class="hidden relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header/Navigation -->
+        <header class="py-6">
+            <nav class="flex justify-between items-center">
+                <div class="logo-animated text-2xl font-bold tracking-wider">AG</div>
+                <ul class="hidden md:flex space-x-8 text-lg">
+                    <li><a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a></li>
+                    <li><a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">Projects</a></li>
+                    <li><a href="#ai-assistant" class="hover:text-cyan-400 transition-colors duration-300">AI Assistant</a></li>
+                    <li><a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
+             <div class="profile-image-container w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8">
+                <img src="http://googleusercontent.com/file_content/1" alt="Abhishek Gidd" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/256x256/1e293b/ffffff?text=AG';">
+            </div>
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
+                    Abhishek Gidd
+                </h1>
+                <h2 id="animated-subtitle" class="text-3xl md:text-5xl font-light text-cyan-300 mt-2">
+                    <!-- Subtitle will be injected by JS -->
+                </h2>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                    A recent Computer Science graduate with a passion for building web applications and a strong foundation in front-end and back-end technologies.
+                </p>
+                
+                <a href="#projects" class="mt-8 inline-block bg-cyan-500 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-cyan-600 transition-transform duration-300 transform hover:scale-105">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="content-section max-w-4xl mx-auto p-8 md:p-12 rounded-2xl">
+                <h2 class="text-4xl font-bold text-center text-white mb-8">About Me</h2>
+                <p class="text-lg text-gray-300 leading-relaxed text-center">
+                    I am a Computer Science Engineering graduate with strong skills in Python, JavaScript, and a solid understanding of algorithms and data structures. I have experience in both front-end and back-end development, utilizing HTML, CSS, and SQL. I possess strong problem-solving abilities, effective communication skills, and a keen willingness to learn and collaborate in a team environment.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 md:py-32">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">My Tech Arsenal</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="skill-card p-6 rounded-lg text-center">
+                    <i class="fab fa-python fa-3x text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">Python</h3>
+                </div>
+                <div class="skill-card p-6 rounded-lg text-center">
+                    <i class="fas fa-database fa-3x text-purple-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">SQL</h3>
+                </div>
+                <div class="skill-card p-6 rounded-lg text-center">
+                    <i class="fab fa-html5 fa-3x text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">HTML</h3>
+                </div>
+                <div class="skill-card p-6 rounded-lg text-center">
+                    <i class="fab fa-css3-alt fa-3x text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">CSS</h3>
+                </div>
+                <div class="skill-card p-6 rounded-lg text-center">
+                    <i class="fab fa-js-square fa-3x text-yellow-300 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">JavaScript</h3>
+                </div>
+                <div class="skill-card p-6 rounded-lg text-center">
+                    <i class="fab fa-react fa-3x text-cyan-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">React</h3>
+                </div>
+                 <div class="skill-card p-6 rounded-lg text-center">
+                    <i class="fab fa-python fa-3x text-emerald-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">Django</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 md:py-32">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="glass-effect project-card-1 rounded-2xl p-6 flex flex-col group transition-all duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-2">Driver Drowsiness Detection</h3>
+                    <p class="text-gray-400 flex-grow">A real-time system to detect driver drowsiness and prevent accidents by monitoring facial features using the Haar cascade algorithm.</p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-2">Python</span>
+                        <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-2">Machine Learning</span>
+                        <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-2">NumPy</span>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="glass-effect project-card-2 rounded-2xl p-6 flex flex-col group transition-all duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-2">Resort Management System</h3>
+                    <p class="text-gray-400 flex-grow">A database-driven system demonstrating schema design, normalization, and advanced SQL (CRUD) operations for resort management.</p>
+                     <div class="mt-4">
+                        <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-2">SQL</span>
+                        <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-2">DBMS</span>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="glass-effect project-card-3 rounded-2xl p-6 flex flex-col group transition-all duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-2">Rainfall Prediction Model</h3>
+                    <p class="text-gray-400 flex-grow">A predictive model using Machine Learning and LSTM neural networks to forecast weather patterns with a focus on data preprocessing and evaluation.</p>
+                     <div class="mt-4">
+                        <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-2">Machine Learning</span>
+                        <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-300 mr-2 mb-2">Python</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Assistant Section -->
+        <section id="ai-assistant" class="py-20 md:py-32">
+            <div class="hologram-container relative max-w-4xl mx-auto p-8 md:p-12 rounded-2xl">
+                <div class="corner top-left"></div>
+                <div class="corner top-right"></div>
+                <div class="corner bottom-left"></div>
+                <div class="corner bottom-right"></div>
+                <div class="scanline"></div>
+                
+                <div class="relative z-10 text-center">
+                    <div class="flex justify-center items-center mb-4">
+                        <h2 class="text-4xl font-bold text-center text-white">Cosmic AI Assistant</h2>
+                        <i id="ai-voice-button" class="fas fa-microphone text-2xl text-cyan-400 ml-4 cursor-pointer hover:text-cyan-300 transition-colors"></i>
+                    </div>
+                    
+                    <div class="my-6">
+                        <img src="bot.jpg" alt="AI Assistant Bot" class="ai-bot-image w-32 h-32 mx-auto rounded-full border-2 border-cyan-400 p-1" onerror="this.onerror=null;this.src='https://placehold.co/128x128/1e293b/00ffff?text=AI';">
+                    </div>
+
+                    <p class="text-lg text-gray-300 leading-relaxed text-center mb-8">
+                        Have a question? Ask my AI assistant, powered by Google Gemini.
+                    </p>
+                    <div class="glass-effect p-6 rounded-lg">
+                        <textarea id="ai-prompt" class="w-full h-24 bg-gray-800 text-white p-4 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="e.g., Explain the concept of a black hole..."></textarea>
+                        <button id="ask-ai-button" class="mt-4 w-full bg-cyan-500 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-cyan-600 transition-transform duration-300 transform hover:scale-105">
+                            Ask the Cosmos
+                        </button>
+                        <div id="ai-response-container" class="mt-6 p-4 bg-gray-800 rounded-lg min-h-[100px] text-gray-300 whitespace-pre-wrap">
+                            <div id="loader" class="hidden loader"></div>
+                            <p id="ai-response"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32">
+            <div class="hologram-container relative max-w-4xl mx-auto p-8 md:p-12 rounded-2xl text-center">
+                 <div class="corner top-left"></div>
+                 <div class="corner top-right"></div>
+                 <div class="corner bottom-left"></div>
+                 <div class="corner bottom-right"></div>
+                 <div class="scanline"></div>
+                 <div class="relative z-10">
+                    <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                    <p class="text-lg text-gray-300 mb-8">I'm currently open to new opportunities and collaborations. Feel free to reach out!</p>
+                    <a href="mailto:abhishekgidd@gmail.com" class="text-2xl font-semibold text-cyan-400 hover:text-cyan-300 transition-colors duration-300">
+                        abhishekgidd@gmail.com
+                    </a>
+                    <div class="mt-6 text-lg text-gray-300">
+                        <p>+91 6364379755</p>
+                    </div>
+                    <div class="mt-8 flex justify-center space-x-6">
+                        <a href="https://www.linkedin.com/in/abhishek-gidd-870957293/" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://github.com/Abhigidd" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-8 text-gray-500">
+            <p>&copy; 2024 Abhishek Gidd. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

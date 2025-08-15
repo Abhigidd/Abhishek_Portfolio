@@ -1,0 +1,226 @@
+body {
+    font-family: 'Inter', sans-serif;
+    color: #e0e0e0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.content-section {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(10, 10, 25, 0.6); /* Semi-transparent dark blue */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.glass-effect {
+     background-color: rgba(255, 255, 255, 0.05);
+     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.profile-image-container {
+    border: 3px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+}
+.skill-card {
+    background: linear-gradient(145deg, rgba(20, 30, 60, 0.5), rgba(30, 40, 70, 0.5));
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+}
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    border-color: rgba(0, 255, 255, 0.5);
+}
+
+/* New Gradient Animation for Landing Page Title */
+.landing-title {
+    background: linear-gradient(90deg, #00ffff, #a855f7, #ffffff, #a855f7, #00ffff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 8s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.logo-animated {
+     animation: color-cycle 10s infinite linear;
+}
+@keyframes color-cycle {
+    0%   { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+    25%  { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
+    50%  { color: #00ff00; text-shadow: 0 0 10px #00ff00; }
+    75%  { color: #ffff00; text-shadow: 0 0 10px #ffff00; }
+    100% { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+}
+
+/* Loading Spinner for AI Assistant */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* Unique Project Card Styles */
+.project-card-1 {
+    background: linear-gradient(145deg, rgba(20, 30, 60, 0.5), rgba(0, 50, 70, 0.5));
+}
+.project-card-1:hover {
+    border-color: #22d3ee; /* cyan-400 */
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
+}
+.project-card-2 {
+    background: linear-gradient(145deg, rgba(20, 30, 60, 0.5), rgba(50, 0, 70, 0.5));
+}
+.project-card-2:hover {
+    border-color: #a855f7; /* purple-500 */
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+}
+.project-card-3 {
+    background: linear-gradient(145deg, rgba(20, 30, 60, 0.5), rgba(0, 70, 50, 0.5));
+}
+.project-card-3:hover {
+    border-color: #34d399; /* emerald-400 */
+    box-shadow: 0 0 25px rgba(52, 211, 153, 0.4);
+}
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* --- Hologram Container Styles --- */
+.hologram-container {
+    background: rgba(10, 25, 47, 0.7);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+.corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #00ffff;
+    animation: pulse-glow 2s infinite alternate;
+}
+.corner.top-left { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.corner.top-right { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+.corner.bottom-left { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+.corner.bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+@keyframes pulse-glow {
+    from { box-shadow: 0 0 5px #00ffff; }
+    to { box-shadow: 0 0 15px #00ffff; }
+}
+
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to bottom, rgba(0, 255, 255, 0), rgba(0, 255, 255, 0.4), rgba(0, 255, 255, 0));
+    animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+/* Typing effect cursor */
+.typing::after {
+    content: '▋';
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.ai-bot-image {
+    animation: pulse-bot 3s infinite ease-in-out;
+}
+
+@keyframes pulse-bot {
+    0% { transform: scale(1); box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 255, 255, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); }
+}
+
+/* --- New Landing Page Styles --- */
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid #00ffff; /* The cursor */
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .1em;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00ffff; }
+}
+
+#enter-galaxy-button {
+    background: linear-gradient(90deg, #00ffff, #a855f7, #00ffff);
+    background-size: 200% 200%;
+    animation: gradient-animation 4s ease infinite, pulse-glow-button 2s infinite alternate;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes pulse-glow-button {
+    from { box-shadow: 0 0 10px #a855f7, 0 0 20px #00ffff; }
+    to { box-shadow: 0 0 20px #a855f7, 0 0 40px #00ffff; }
+}
+
+/* --- New Animated Subtitle Styles --- */
+#animated-subtitle span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeInLetter 1s forwards;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+@keyframes fadeInLetter {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
